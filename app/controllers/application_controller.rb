@@ -9,6 +9,24 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def username
+    if(current_user)  
+      @username = current_user.first_name + " " + current_user.last_name
+    else  
+    "Guest User"
+    end  
+  end
+  helper_method :username
+    
+  def guess_checkout?
+    if(current_user)  
+      current_user.email
+    else  
+    ""
+    end  
+  end
+  helper_method :guess_checkout?
+
   def authorize
     redirect_to '/login' unless current_user
   end
@@ -38,4 +56,10 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+
+  
+
+
+
+
 end
