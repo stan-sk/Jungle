@@ -5,7 +5,9 @@
 <%= form_for :user, url: '/users' do |f| %>
 
 <div class="col-2">
-  Name: <%= f.text_field :name %>
+  First Name: <%= f.text_field :first_name %>
+  <br>
+  Last Name: <%= f.text_field :last_name %>
   <br>
   Email: <%= f.text_field :email %>
   <br>
